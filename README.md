@@ -1,3 +1,19 @@
+针对小米wifi 修改
+
+1.  lsusb
+
+	Bus 001 Device 033: ID 2717:4106  (这2个数字就是小米wifi的id)
+
+2.  cd  mt7601/src
+	vim common/rtusb_dev_id.c 
+        
+	在#ifdef MT7601U段添加
+
+	        	{USB_DEVICE(0x2717,0x4106)}, /* xiaomi wifi */
+
+然后继续下面的make
+
+
 ## MT7601U Linux driver
 
 Many cheap USB wifi dongles use the MT7601U chip.
